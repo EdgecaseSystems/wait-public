@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+
+# Build / coverage
+coverage/
+dist/
+.tmp/
+tmp/
+outputs/
+validation-*/
+
+# Cloudflare / Wrangler local state
+.wrangler/
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+!.env.example
+
+# Secrets / local credential handoffs
+*.dpapi
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Raw local test/evaluation artifacts
+artifacts/
+reports/raw/
+
+# Portfolio: never commit local credentials or generated operational state
+.dev.vars*
+.env*
+*.pem
+*.key
+*.pfx
+*.p12
+*.dpapi
+.vscode/
+work/
+.wrangler/

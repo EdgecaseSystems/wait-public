@@ -1,0 +1,2 @@
+# Preserve the upstream-generated runtime declarations without hand-editing them.
+worker-configuration.d.ts linguist-generated=true -whitespace

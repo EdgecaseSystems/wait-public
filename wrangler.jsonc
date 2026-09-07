@@ -1,0 +1,53 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "wait-portfolio",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": [
+    "global_fetch_strictly_public"
+  ],
+  "workers_dev": false,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "wait-portfolio-db",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "workflows": [
+    {
+      "binding": "DELIVERY_WORKFLOW",
+      "name": "wait-portfolio-delivery",
+      "class_name": "DeliveryWorkflow"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "17 * * * *"
+    ]
+  },
+  "preview_urls": false,
+  "vars": {
+    "PUBLIC_ORIGIN": "https://wait.example.com",
+    "PAYMENT_MODE": "x402-base-mainnet",
+    "X402_FACILITATOR_URL": "https://api.cdp.coinbase.com/platform/v2/x402",
+    "X402_NETWORK": "eip155:8453",
+    "X402_ASSET": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    "X402_AMOUNT_ATOMIC": "10000",
+    "X402_PAY_TO": "0x0000000000000000000000000000000000000000",
+    "X402_ASSET_NAME": "USD Coin",
+    "X402_ASSET_VERSION": "2"
+  },
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "invocation_logs": false,
+      "head_sampling_rate": 1
+    },
+    "traces": {
+      "enabled": false
+    }
+  }
+}
