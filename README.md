@@ -6,6 +6,8 @@
 
 **Portfolio evidence:** 225 automated tests at publication (178 unit + 47 Workers-runtime integration tests) · TypeScript · Cloudflare Workers/D1/Workflows · x402 payments · passing CI
 
+**Post-publication validation:** two separately approved 2026-09-10 Base-mainnet production audits exercised one-cent payment negotiation, paid wait creation, first-event acceptance, and successful callback delivery. The portfolio record intentionally omits wallet, capability, callback-token, receiver, and payment-proof identifiers. [Sanitized validation record](docs/POST_PUBLICATION_VALIDATION.md).
+
 An agent often needs to pause until another system sends an event. Keeping the agent running or repeatedly polling wastes resources and complicates recovery. Wait stores a temporary event receiver, accepts one future JSON event, and delivers it to the buyer's HTTPS callback.
 
 **The production Wait service is live and designed for largely autonomous machine-to-machine operation.** Once deployed and configured, the normal purchase, waiting, event acceptance, and callback-delivery lifecycle runs without a human operator. Human intervention is reserved for exceptional payment reconciliation, operational maintenance, or other unusual remediation cases.
